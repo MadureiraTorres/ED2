@@ -12,7 +12,6 @@ n: tamanho do vetor
 elem: elemento a se procurar
 */
 
-//cabeçalho de funções
 int *buscaLinearRep(int *v, int n, int elem);
 int buscaLinear(int *v, int n, int elem);
 
@@ -20,7 +19,6 @@ int buscaLinear(int *v, int n, int elem);
 int main(){
     int tam = 10;
     int num;
-    int posLinear[3];
 
     int random[] = {1, 25, 3, 30, 4, 27, 17, 4, 2, 4};
     
@@ -28,10 +26,14 @@ int main(){
     scanf("%d", &num);
 
     int linear = buscaLinear(random, tam, num);
-    printf("Valor %d encontrado por busca linear, posicao %d\n", num, linear);
-
+    if (linear == -1){
+        printf("Valor %d nao encontrado por busca linear\n", num);
+    }else if(num != 4){
+        printf("Valor %d encontrado por busca linear, posicao %d\n", num, linear);
+    }
+    
     if(num == 4){
-        *posLinear = *buscaLinearRep(random, tam, num); 
+        int *posLinear = buscaLinearRep(random, tam, num); 
 
         for(int i = 0; i < 3; i++){
             printf("Valor %d encontrado por busca linear, posicao %d\n", num, posLinear[i]);
@@ -42,7 +44,6 @@ int main(){
     return 0;
 }
 
-//busca linear
 int *buscaLinearRep(int *v, int n, int elem){
     int *quantNum = (int*) malloc(3 * sizeof(int));
 
@@ -55,16 +56,13 @@ int *buscaLinearRep(int *v, int n, int elem){
     for(int i = 0; i < n; i++){
         if(elem == v[i]){
             aux = i;
-
             for(int j = 0; j < 3; j++){
                 if(quantNum[j] == 99){
                     quantNum[j] = aux;
-                    printf("\nvalor adicionado: %d\n",aux);
+                    break;
                 }
             }
         }
-    
-    printf("\nvalor percorrido: %d\n",i);
     }
 
     return quantNum;

@@ -18,13 +18,18 @@ int main(){
         printf("%d ", v[i]);
     }
 
+    clock_t start = clock();
     selectionSort(v, tam);
+    clock_t end = clock();
+
 
     printf("\nVetor ordenado: ");
     for(int i = 0; i < tam; i++){
         printf("%d ", v[i]);
     }
     free(v);
+
+    printf("\nTempo de ordenacao: %lf segundos\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 
     return 0;
 }

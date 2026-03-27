@@ -58,9 +58,7 @@ void selectionSort(int *v, int n){
 }
 
 /*
-Resposta 4: O algoritmo de ordenação por seleção tem complexidade O(n^2) no pior caso, 
-pois ele percorre o vetor para encontrar o menor elemento e depois faz uma troca, 
-repetindo esse processo para cada elemento do vetor. Portanto, mesmo que o vetor esteja parcialmente ordenado, 
-o algoritmo ainda precisará percorrer todo o vetor para encontrar o menor elemento em cada iteração, 
-resultando em uma complexidade quadrática.
+Resposta 4: 
+A principal vantagem é que a quantidade de trocas é menor. Sendo ela menor por conta da troca ser feita apenas uma vez por iteração, 
+enquanto no método de seleção tradicional, a troca ocorre toda vez que um elemento menor é encontrado durante a busca pelo menor elemento.
 */

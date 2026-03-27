@@ -1,24 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 void selectionSort(int *v, int n);
 
 int main(){
     int tam = 10;
+    srand(time(NULL));
     int *v = (int*) malloc(tam * sizeof(int));
 
     for(int i = 0; i < tam; i++){
         v[i] = rand() % 100;
     }
 
-    selectionSort(v, tam);
-
+    printf("\nVetor: ");
     for(int i = 0; i < tam; i++){
         printf("%d ", v[i]);
     }
 
     selectionSort(v, tam);
 
+    printf("\nVetor ordenado: ");
+    for(int i = 0; i < tam; i++){
+        printf("%d ", v[i]);
+    }
     free(v);
 
     return 0;

@@ -37,6 +37,8 @@ int main(){
 void selectionSort(int *v, int n){
     int i, j, min, aux;
 
+    int trocas = 0;
+
     for(i = 0; i < n-1; i++){
         min = i;
 
@@ -45,7 +47,11 @@ void selectionSort(int *v, int n){
                 aux = v[min];
                 v[min] = v[j];
                 v[j] = aux;
+                trocas++;
             }
         }
     }
+
+    printf("\n\nNúmero de trocas: %d", trocas);
+
 }

@@ -12,6 +12,7 @@ void swap(int *a, int *b);
 void bubbleSort(int *v, int n, bool ascendente);
 
 int main(){
+    int trocas = 0;
     int vetor[] ={23, 4, 67, -8, 90, 54, 21, 0, -3, 15};
     int n = sizeof(vetor)/sizeof(vetor[0]);
 

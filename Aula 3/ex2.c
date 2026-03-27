@@ -5,7 +5,7 @@
 void selectionSort(int *v, int n);
 
 int main(){
-    int tam = 10;
+    int tam = 10;;
     srand(time(NULL));
     int *v = (int*) malloc(tam * sizeof(int));
 
@@ -22,6 +22,7 @@ int main(){
     selectionSort(v, tam);
     clock_t end = clock();
 
+
     printf("\nVetor ordenado: ");
     for(int i = 0; i < tam; i++){
         printf("%d ", v[i]);
@@ -36,6 +37,8 @@ int main(){
 void selectionSort(int *v, int n){
     int i, j, max, aux;
 
+    int trocas = 0;
+
     for(i = 0; i < n-1; i++){
         max = i;
 
@@ -44,7 +47,10 @@ void selectionSort(int *v, int n){
                 aux = v[max];
                 v[max] = v[j];
                 v[j] = aux;
+                trocas++;
             }
         }
     }
+
+    printf("\n\nNúmero de trocas: %d", trocas);
 }

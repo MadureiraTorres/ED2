@@ -1,11 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/*
-Utilizando a linguagem C, implemente a versão básica do algoritmo Insertion Sort. 
-Deve ser mostrado ao final o vetor ordenado e também a contagem do  número 
-total de trocas efetuadas. 
-*/
+//Idem ao anterior, mas que implemente a ordenação de forma Decrescente. 
 
 void insertionSort(int *v, int n);
 
@@ -37,7 +33,7 @@ void insertionSort(int *v, int n){
         chosen = v[i];
         j = i - 1;
         
-        while(j >= 0 && chosen < v[j]){
+        while(j >= 0 && chosen > v[j]){
             v[j+1] = v[j];
             j = j - 1;
         }

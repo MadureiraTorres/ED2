@@ -44,3 +44,8 @@ void insertionSort(int *v, int n){
 
     printf("\n\nNúmero total de trocas efetuadas: %d", cont);
 }
+
+/*
+Resposta do exercício 3:
+    1B - 2A - 3C
+*/

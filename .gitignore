@@ -1,10 +1,2 @@
 *.exe
-/Aula 7/output
-*.log
-*.tmp
-*.bak
-*.obj
-*.dll
-*.pdb
-*.cache
-*.zip
+Aula 7/output/ex1

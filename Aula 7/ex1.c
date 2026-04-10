@@ -11,7 +11,7 @@ int main(){
     for(int i = 0; i < 7; i++){
         printf("%d ", vetor[i]);
     }
-    printf("\n");
+    printf("\n\n");
 
     quickSort(vetor, 0, 6);
 

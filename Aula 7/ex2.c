@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /*
-quicksort simples
+quicksort simples decrescente
 */
 
 void quickSort(int *v, int inicio, int fim);
@@ -45,11 +45,11 @@ int particiona (int* v, int inicio, int final){
     pivo = v[inicio];
 
     while(esq < dir){
-        while(esq <= final && v[esq] <= pivo){
+        while(esq <= final && v[esq] >= pivo){ 
             esq++;
         }
 
-        while(dir >= 0 && v[dir] > pivo){
+        while(dir >= inicio && v[dir] < pivo){
             dir--;
         }
 

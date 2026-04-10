@@ -1,29 +1,39 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
 
 /*
-quicksort simples
+criar um vetor de 1000 posições, preencher com números aleatórios e ordenar usando o quicksort, mostrar o tempo de ordenação
 */
 
 void quickSort(int *v, int inicio, int fim);
 int particiona (int* v, int inicio, int final);
 
 int main(){
-    int vetor[] = {23, 4, 67, -8, 90, 54, 21};
+    int vetor[1000];
+    srand(time(NULL));
+    clock_t start, end;
+    double cpu_time_used;
 
-    printf("Vetor antes da ordenação:\n");
-    for(int i = 0; i < 7; i++){
+
+    for(int i = 0; i < 1000; i++){
+        vetor[i] = rand() % 1000;
+    }
+
+    start = clock();
+    quickSort(vetor, 0, 999);
+    end = clock();
+    cpu_time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
+
+    printf("Vetor após a ordenação:\n");    
+    for(int i = 0; i < 1000; i++){
         printf("%d ", vetor[i]);
     }
+
+    printf("\n\n\n");
+    printf("Tempo de ordenação: %f segundos\n", cpu_time_used);
     printf("\n\n");
-
-    quickSort(vetor, 0, 6);
-
-    printf("Vetor após a ordenação:\n");
-    for(int i = 0; i < 7; i++){
-        printf("%d ", vetor[i]);
-    }
-    printf("\n");
 
     return 0;
 }
@@ -64,3 +74,6 @@ int particiona (int* v, int inicio, int final){
     v[dir] = pivo;
     return dir;
 }
+
+//Resposta exercício 4:
+// 5, 1, 2, 4, 3

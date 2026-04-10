@@ -1,5 +1,5 @@
 *.exe
-/output
+/Aula 7/output
 *.log
 *.tmp
 *.bak

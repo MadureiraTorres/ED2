@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-//implementação do algoritmo de ordenação Merge Sort
+//implementação do algoritmo de ordenação Merge Sort em ordem decrescente
 
 void mergeSort(int *v, int inicio, int fim);
 void merge(int *v, int inicio, int meio, int fim);
@@ -51,7 +51,7 @@ void merge(int *v, int inicio, int meio, int fim){
     if(temp != NULL){
         for(i = 0; i < tamanho; i++){
             if(!fim1 && !fim2){
-                if(v[p1] < v[p2])
+                if(v[p1] > v[p2])
                     temp[i] = v[p1++];
                 else
                     temp[i] = v[p2++];

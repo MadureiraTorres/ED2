@@ -1,30 +1,39 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
-//implementação do algoritmo de ordenação Merge Sort
+//implementar com um vetor de 100 elementos aleatórios e contar o tempo
 
 void mergeSort(int *v, int inicio, int fim);
 void merge(int *v, int inicio, int meio, int fim);
 
 int main(){
-    int vetor[] = {23, 4, 67, -8, 90, 54, 21};
+    int vetor[100];
     int n = sizeof(vetor) / sizeof(vetor[0]);
+
+    srand(time(NULL));
+    for(int i = 0; i < n; i++){
+        vetor[i] = rand() % 1000; //gerar números aleatórios entre 0 e 999
+    }
 
     printf("Vetor original: ");
     for(int i = 0; i < n; i++){
         printf("%d ", vetor[i]);
     }
 
-    printf("\n");
+    printf("\n\n");
 
+    clock_t start = clock();
     mergeSort(vetor, 0, n - 1);
+    clock_t end = clock();
 
     printf("Vetor ordenado: ");
     for(int i = 0; i < n; i++){
         printf("%d ", vetor[i]);
-    } 
-    printf("\n");
+    }
+
+    printf("\n\nTempo de execução: %f segundos\n", ((double)(end - start)) / CLOCKS_PER_SEC);
 
     return 0;
 }

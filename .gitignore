@@ -1,1 +1,10 @@
 *.exe
+/output
+*.log
+*.tmp
+*.bak
+*.obj
+*.dll
+*.pdb
+*.cache
+*.zip

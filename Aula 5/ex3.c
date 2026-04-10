@@ -82,3 +82,7 @@ void merge(int *v, int inicio, int meio, int fim){
 
     free(temp);
 }
+
+//resposta ex 4: MergeSort é um algoritmo de ordenação estável, preservando a ordem relativa de elementos iguais.
+
+//resposta ex 5: Errado.

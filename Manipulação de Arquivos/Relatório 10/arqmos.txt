@@ -1,0 +1,4 @@
+Cd
+Dvd
+Vinil
+Fita

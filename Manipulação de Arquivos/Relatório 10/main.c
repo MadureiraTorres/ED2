@@ -16,23 +16,21 @@ int main(){
     imprimirArquivo(arq);
 
     setbuf(stdin, NULL);
+    setbuf(stdout, NULL);
 
     printf("\nDigite uma palavra para inserir no arquivo: ");
     fgets(palavra, sizeof(palavra), stdin);
     palavra[strcspn(palavra, "\n")] = 0;
     setbuf(stdin, NULL);
+
     escreverArquivo(arq, palavra);
-
-    printf("Conteúdo do arquivo:\n");
-    imprimirArquivo(arq);
-
     fecharArquivo(arq);
 
     return 0;
 }
 
 FILE* abrirArquivo(){
-    FILE *arq = fopen("arqmos.txt", "r");
+    FILE *arq = fopen("arqmos.txt", "a+");
     if(arq == NULL){
         printf("Erro ao abrir o arquivo!\n");
         exit(1);
@@ -44,11 +42,11 @@ FILE* abrirArquivo(){
 }
 
 void imprimirArquivo(FILE *arq){
-    char ch;
-    while((ch = fgetc(arq)) != EOF){
-        putchar(ch);
-    }
+    char c;
     rewind(arq);
+    while((c = fgetc(arq)) != EOF){
+        printf("%c", c);
+    }
 }
 
 void escreverArquivo(FILE *arq, char *palavra){

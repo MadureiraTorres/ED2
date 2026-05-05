@@ -2,3 +2,4 @@ Cd
 Dvd
 Vinil
 Fita
+papel

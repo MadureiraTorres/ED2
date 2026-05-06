@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-//cabeçalho de funções
+#define TAM 100 // tamanho do buffer centralizado
+
 FILE* abrirArquivo();
 void imprimirArquivo(FILE *arq);
 void escreverArquivo(FILE *arq, char *palavra);
@@ -10,7 +11,7 @@ void fecharArquivo(FILE *arq);
 
 int main(){
     FILE *arq = abrirArquivo();
-    char *palavra = (char*)calloc(100, sizeof(char));
+    char *palavra = (char*)calloc(TAM, sizeof(char));
 
     printf("Conteúdo do arquivo:\n");
     imprimirArquivo(arq);
@@ -19,7 +20,7 @@ int main(){
     setbuf(stdout, NULL);
 
     printf("\nDigite uma palavra para inserir no arquivo: ");
-    fgets(palavra, sizeof(palavra), stdin);
+    fgets(palavra, TAM, stdin);
     palavra[strcspn(palavra, "\n")] = 0;
     setbuf(stdin, NULL);
 
@@ -42,7 +43,7 @@ FILE* abrirArquivo(){
 }
 
 void imprimirArquivo(FILE *arq){
-    char c;
+    int c; 
     rewind(arq);
     while((c = fgetc(arq)) != EOF){
         printf("%c", c);

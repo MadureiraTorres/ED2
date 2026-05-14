@@ -73,7 +73,7 @@ Pessoa leituraBusca(){
     }
 
     //buscar a segunda pessoa do arquivo
-    for(int i = 0; i < NUM_PESSOAS; i++) {
+    for(int i = 0; i < NUM_PESSOAS; i++){
         pessoaBuscada = pessoasArq[1];
     }
     

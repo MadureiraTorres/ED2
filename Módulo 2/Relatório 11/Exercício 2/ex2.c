@@ -3,38 +3,38 @@
 #include <stdbool.h>
 #include <string.h>
 
-bool biscaBinária(char **v, char *elemento);
+bool buscaBinaria(char *v[], int tamanho, char *elemento);
 
 int main(){
-    //lista com elementos
-    char lista[4][20] = {"Edgar Codd", "arvore", "VonNeumann", "George Boole"};
-    for(int i = 0; i < 4; i++){
+    char *lista[] = {"Edgar Codd", "George Boole", "VonNeumann", "arvore"};
+    int tamanho = sizeof(lista) / sizeof(lista[0]); 
+
+    for(int i = 0; i < tamanho; i++){
         printf("%s\n", lista[i]);
     }
 
-    //procurar elementos que existem na lista
-    bool ret = biscaBinária(&lista, "Edgar Codd");
+    bool ret = buscaBinaria(lista, tamanho, "Edgar Codd");
     printf("Busca por 'Edgar Codd': %s\n", ret ? "Encontrado" : "Não encontrado");
 
-    ret = biscaBinária(&lista, "VonNeumann");
+    ret = buscaBinaria(lista, tamanho, "VonNeumann");
     printf("Busca por 'VonNeumann': %s\n", ret ? "Encontrado" : "Não encontrado");
 
-    //procurar um elemento que não existe na lista
-    ret = biscaBinária(&lista, "blablabla");
+    ret = buscaBinaria(lista, tamanho, "blablabla");
     printf("Busca por 'blablabla': %s\n", ret ? "Encontrado" : "Não encontrado");
 
     return 0;
 }
 
-bool biscaBinária(char *v[], char *elemento){
+bool buscaBinaria(char *v[], int tamanho, char *elemento){
     int inicio = 0;
-    int fim = sizeof(v) / sizeof(v[0]) - 1;
+    int fim = tamanho - 1; 
 
     while(inicio <= fim){
-        int meio = inicio + (fim-inicio) / 2;
-        if(strcmp(v[meio], elemento) == 0){
+        int meio = inicio + (fim - inicio) / 2;
+        int cmp = strcmp(v[meio], elemento);
+        if(cmp == 0){
             return true;
-        } else if(strcmp(v[meio], elemento) < 0){
+        } else if(cmp < 0){
             inicio = meio + 1;
         } else {
             fim = meio - 1;
@@ -43,5 +43,3 @@ bool biscaBinária(char *v[], char *elemento){
 
     return false;
 }
-
-//pedir ajuda pro prof (segmentation fault)

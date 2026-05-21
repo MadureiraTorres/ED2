@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
-#define TAM 3000000
+#include "benchmark.h"
+#define TAM 3000
 
 void swap(int *a, int *b);
 void bubbleSort(int *v, int n);
@@ -19,7 +20,9 @@ int main(){
     clock_t start = clock();
     bubbleSort(v, tam);
     clock_t end = clock();
-    printf("\nTempo de ordenacao: %lf segundos\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+    double tempo = ((double)(end - start)) / CLOCKS_PER_SEC;
+    printf("\nTempo de ordenacao: %lf segundos\n", tempo);
+    salvarResultado(tam, "Bubble Sort", tempo);
 
     free(v);
     return 0;

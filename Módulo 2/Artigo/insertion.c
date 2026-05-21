@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include <time.h>
-#define TAM 3000000
+#include "benchmark.h"
+#define TAM 3000
+
+void insertionSort(int *v, int n);
 
 int main(){
     int tam = TAM;
@@ -16,8 +18,26 @@ int main(){
     clock_t start = clock();
     insertionSort(v, tam);
     clock_t end = clock();
-    printf("\nTempo de ordenacao: %lf segundos\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+    double tempo = ((double)(end - start)) / CLOCKS_PER_SEC;
+    printf("\nTempo de ordenacao: %lf segundos\n", tempo);
+    salvarResultado(tam, "Insertion Sort", tempo);
 
     free(v);
     return 0;
+}
+
+void insertionSort(int *v, int n){
+    int i, j, chosen;
+
+    for(i = 1; i < n; i++){
+        chosen = v[i];
+        j = i - 1;
+        
+        while(j >= 0 && chosen < v[j]){
+            v[j+1] = v[j];
+            j = j - 1;
+        }
+        
+        v[j + 1] = chosen;
+    }
 }

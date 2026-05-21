@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include <time.h>
-#define TAM 3000000
+#include "benchmark.h"
+#define TAM 3000
 
 void quickSort(int *v, int inicio, int fim);
 int particiona (int* v, int inicio, int final);
@@ -19,7 +19,9 @@ int main(){
     clock_t start = clock();
     quickSort(v, 0, tam - 1);
     clock_t end = clock();
-    printf("\nTempo de ordenacao: %lf segundos\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+    double tempo = ((double)(end - start)) / CLOCKS_PER_SEC;
+    printf("\nTempo de ordenacao: %lf segundos\n", tempo);
+    salvarResultado(tam, "Quick Sort", tempo);
 
     free(v);
     return 0;

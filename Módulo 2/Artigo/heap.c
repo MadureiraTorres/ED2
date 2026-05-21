@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "benchmark.h"
-#define TAM 3000
+#define TAM 3000000
 
 void heapSort(int *v, int n);
 void criaHeap(int *v, int i, int f);

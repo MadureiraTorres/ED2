@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include <time.h>
 #include "benchmark.h"
-#define TAM 3000
+#define TAM 3000000
 
 void swap(int *a, int *b);
 void bubbleSort(int *v, int n);

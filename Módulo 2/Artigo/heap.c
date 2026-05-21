@@ -12,6 +12,11 @@ int main(){
     srand(time(NULL));
     int *v = (int*) malloc(tam * sizeof(int));
 
+    if(v == NULL) {
+        fprintf(stderr, "Erro ao alocar memoria\n");
+        return 1;
+    }
+
     for(int i = 0; i < tam; i++){
         v[i] = rand() % TAM;
     }

@@ -8,7 +8,7 @@ void quickSort(int *v, int inicio, int fim);
 int particiona (int* v, int inicio, int final);
 
 int main(){
-    int tam = TAM;
+    int tam = 2 * TAM;
     srand(time(NULL));
     int *v = (int*) malloc(tam * sizeof(int));
 
@@ -17,9 +17,13 @@ int main(){
         return 1;
     }
 
+    printf("Gerando vetor de %d elementos...\n", tam);
+
     for(int i = 0; i < tam; i++){
         v[i] = rand() % TAM;
     }
+
+    printf("\nVetor Gerado! Iniciando ordenacao...\n");
 
     clock_t start = clock();
     quickSort(v, 0, tam - 1);

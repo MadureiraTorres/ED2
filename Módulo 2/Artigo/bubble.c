@@ -9,7 +9,7 @@ void swap(int *a, int *b);
 void bubbleSort(int *v, int n);
 
 int main(){
-    int tam = TAM;
+    int tam = 2 * TAM;
     srand(time(NULL));
     int *v = (int*) malloc(tam * sizeof(int));
 
@@ -18,9 +18,12 @@ int main(){
         return 1;
     }
 
+    printf("Gerando vetor de %d elementos...\n", tam);
     for(int i = 0; i < tam; i++){
         v[i] = rand() % TAM;
     }
+
+    printf("\nVetor Gerado! Iniciando ordenacao...\n");
 
     clock_t start = clock();
     bubbleSort(v, tam);

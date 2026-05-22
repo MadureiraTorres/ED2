@@ -1,0 +1,5 @@
+tamanho|algoritmo|tempo(s)
+3000000|Heap Sort|0.660000
+3000000|Quick Sort|0.542000
+3000000|Insertion Sort|4344.960000
+3000000|Bubble Sort|29289.509000

@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 #include "benchmark.h"
-#define TAM 3000000
+#define TAM 300000
 
 void quickSort(int *v, int inicio, int fim);
 int particiona (int* v, int inicio, int final);
 
 int main(){
-    int tam = 2 * TAM;
+    int tam = 5 * TAM;
     srand(time(NULL));
     int *v = (int*) malloc(tam * sizeof(int));
 

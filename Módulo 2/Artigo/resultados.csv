@@ -16,3 +16,6 @@ tamanho|algoritmo|tempo(s)
 1200000|Quick Sort|0.147000
 1200000|Heap Sort|0.202000
 1500000|Bubble Sort|7225.017000
+1500000|Insertion Sort|1103.000000
+1500000|Quick Sort|0.184000
+1500000|Heap Sort|0.299000

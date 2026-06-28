@@ -1,0 +1,11 @@
+Consulta: ano = 2022
+------------------------------------------------------------
+Total de registros encontrados: 7
+
+2022|2:53|Acorda, Pedrinho|Jovem Dionísio|pop rock|português
+2022|4:05|Hoy Muero Feliz|Francisco, El Hombre|latina|espanhol
+2022|3:32|The Motto|Tiesto|eletrônica|inglês
+2022|2:45|Bones|Imagine Dragons|Pop|inglês
+2022|3:25|Baile da Serra|Braão|Funk|português
+2022|3:26|Hayya Hayya|Trinidad Cardona|pop|inglês
+2022|2:15|Close Eyes|Chaos|Dance|Inglês
